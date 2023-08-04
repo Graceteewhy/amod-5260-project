@@ -170,7 +170,7 @@ def filter_valid_tickers(tickers):
             else:
                 st.write(f"Delisted or Data not availabe: {ticker}")
         except:
-            st.write("Enter valid ticker")
+            st.write("Enter valid tickers and adjust others to your preference")
     return valid_tickers
 
 
@@ -219,7 +219,7 @@ def page2():
     # Sample list of tickers
     all_tickers = None
     while all_tickers is None:
-        all_tickers = st.sidebar.text_input('Enter stock tickers without spaces, e.g. AMZN,JPM,BA,GOOG', '').upper().replace(',', '\n').split('\n')
+        all_tickers = st.sidebar.text_input('Enter stock tickers without spaces, e.g. AMZN,JPM,BA,GOOG, then click enter on your computer', '').upper().replace(',', '\n').split('\n')
 
     # Filter out invalid or delisted tickers
     tickers = filter_valid_tickers(all_tickers)
